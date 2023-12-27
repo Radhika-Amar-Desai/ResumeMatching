@@ -2,8 +2,11 @@ from dotenv import load_dotenv
 from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.document_loaders import PyPDFLoader
+import os
 
-load_dotenv('.env')
+#load_dotenv('.env.example')
+
+os.environ["OPENAI_API_KEY"] = "sk-"
 
 pdf_loader = PyPDFLoader('./docs/RachelGreenCV.pdf')
 documents = pdf_loader.load()
